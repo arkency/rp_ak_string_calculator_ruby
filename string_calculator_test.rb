@@ -13,6 +13,11 @@ class CalculatorTest < Test::Unit::TestCase
     assert_equal(1122, add("123,999"))
   end
 
+  def test_more_numbers
+    assert_equal(6, add("1,2,3"))
+  end
+
+                 
   def add(expression)
     StringCalculator.new.add(expression)
   end
