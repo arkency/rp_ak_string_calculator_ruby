@@ -38,7 +38,7 @@ end
 
 class StringCalculator
   def add(expression)
-    expression.split(/(\s|,)/).map(&:to_i).inject(0, :+)
+    expression.split(/(\s|,|;)/).map(&:to_i).inject(0, :+)
   end
 end
 
