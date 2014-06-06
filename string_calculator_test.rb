@@ -17,8 +17,17 @@ class CalculatorTest < Test::Unit::TestCase
     assert_equal(6, add("1,2,3"))
   end
 
-  def test_newline_as_separator
+  def test_newline_as_delimeter
     assert_equal(6, add("1\n2,3"))
+  end
+
+  def test_exchanged_one_delimeter
+    text = <<-INPUT.strip
+//;
+123;456
+789
+    INPUT
+    assert_equal(123+456+789, add(text))
   end
 
   def add(expression)
