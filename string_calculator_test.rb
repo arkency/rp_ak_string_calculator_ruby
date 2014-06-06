@@ -1,7 +1,7 @@
 require 'test/unit'
 
 class CalculatorTest < Test::Unit::TestCase
-  def test_truth
-    assert_equal(false, true)
+  def test_empty_string_sums_up_to_zero
+    assert_equal(0, add(""))
   end
 end
