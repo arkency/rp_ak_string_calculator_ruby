@@ -16,6 +16,10 @@ class CalculatorTest < Test::Unit::TestCase
   def test_more_numbers
     assert_equal(6, add("1,2,3"))
   end
+  
+  def test_newline_as_separator
+    assert_equal(6, add("1\n2,3"))
+  end
 
                  
   def add(expression)
