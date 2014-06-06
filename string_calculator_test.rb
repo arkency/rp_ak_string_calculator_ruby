@@ -21,7 +21,7 @@ end
 
 class StringCalculator
   def add(expression)
-    Integer(expression) rescue 0
+    expression.split(",").map(&:to_i).inject(0, :+)
   end
 end
 
