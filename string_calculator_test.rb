@@ -31,11 +31,13 @@ class CalculatorTest < Test::Unit::TestCase
   end
 
   def test_exchanging_delimiter_disables_comma
-    text = <<-INPUT.strip
-//;
+    "|[]{};:,.<>/?-_=+!@#$%^&*".each_char do |delimeter|
+      text = <<-INPUT.strip
+//#{delimeter}
 123;456,789
-    INPUT
-    assert_equal(123+456, add(text))
+      INPUT
+      assert_equal(123+456, add(text), "'#{delimeter}' didn't disable comma")
+    end
   end
 
   #def test_two_delimeters_by_default
