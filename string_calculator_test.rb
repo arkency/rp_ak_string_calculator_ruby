@@ -41,6 +41,10 @@ class CalculatorTest < Test::Unit::TestCase
   #def test_two_delimeters_by_default
   #  assert_equal(1+2+3, add("1\n2,3;4"))
   #end
+  #
+  #def test_number_as_separator
+  # ???
+  #end
 
   def add(expression)
     StringCalculator.new.add(expression)
