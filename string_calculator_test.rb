@@ -50,7 +50,12 @@ end
 
 class StringCalculator
   def add(expression)
-    expression.split(/(\s|,|;)/).map(&:to_i).inject(0, :+)
+    separators = if expression.start_with?("//;")
+      /(\s|;)/
+    else
+      /(\s|,)/
+    end
+    expression.split(separators).map(&:to_i).inject(0, :+)
   end
 end
 
