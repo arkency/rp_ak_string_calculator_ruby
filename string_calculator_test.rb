@@ -30,6 +30,14 @@ class CalculatorTest < Test::Unit::TestCase
     assert_equal(123+456+789, add(text))
   end
 
+  def test_exchanging_delimiter_disables_comma
+    text = <<-INPUT.strip
+//;
+123;456,789
+    INPUT
+    assert_equal(123+456, add(text))
+  end
+
   def add(expression)
     StringCalculator.new.add(expression)
   end
