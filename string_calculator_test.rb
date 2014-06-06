@@ -9,6 +9,10 @@ class CalculatorTest < Test::Unit::TestCase
     assert_equal(1, add("1"))
   end
 
+  def test_two_numbers_sums_up_to_their_sum
+    assert_equal(1122, add("123,999"))
+  end
+
   def add(expression)
     StringCalculator.new.add(expression)
   end
