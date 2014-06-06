@@ -31,7 +31,7 @@ class CalculatorTest < Test::Unit::TestCase
   end
 
   def test_exchanging_delimiter_disables_comma
-    "|[]{};:,.<>/?-_=+!@#$%^&*".each_char do |delimeter|
+    "|[]{};:,.<>/?-_=+!@$%^&*#".each_char do |delimeter|
       text = <<-INPUT.strip
 //#{delimeter}
 123;456,789
